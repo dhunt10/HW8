@@ -1,4 +1,4 @@
-package edu.cs3500.spreadsheets.providerView;
+package edu.cs3500.spreadsheets.provider.view;
 
 /**
  * A worksheet view is a way to represent a worksheet model.  A visual worksheet is made, or the
