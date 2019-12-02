@@ -73,6 +73,9 @@ public class BeyondGood {
         case("-edit"):
           view = "composite";
           break;
+        case("-provider"):
+          view = "provider";
+          break;
         default:
           throw new IllegalArgumentException("This is not how you use our application tough guy");
       }
@@ -100,10 +103,12 @@ public class BeyondGood {
       throw new IllegalArgumentException("text needs a file");
     }
 
-    if (file == null && type.equals("graphic") || file == null && type.equals("composite")) {
+    if (file == null && type.equals("graphic") || file == null && type.equals("composite")
+        || file == null && type.equals("provider")) {
       IView v = createView(type, saveTo, b.createWorksheet(), size);
       v.display();
     }
+
     else {
       try {
         reader = new BufferedReader(new FileReader(file));
@@ -184,6 +189,8 @@ public class BeyondGood {
       case("graphic"): return new GraphicsView(s,  size, size);
       case("composite"):
         return new CompositeView(s.getCurrSpreadSheet(), size, size, s);
+      case("provider"):
+        return new Table();
       default: throw new IllegalArgumentException("This type of view is not supported");
     }
   }
