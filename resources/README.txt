@@ -7,25 +7,25 @@ Data can be placed into the spreadsheets by loading in a static text file as wel
 when the composite graphical view is running. If the graphical view is running data can only be
 inputted via a static file before running the program. Finally, a simpler text view is also available
 in which you can view the data but cannot edit it as the data has been read in via a static text file
-before compile time. 
+before compile time.
 
 ### ***Changes Made***
-##### 
+#####
 We have added in a single change function called updateCurrentView
-we have added in a evaluate single cell function, which in turn evaluates one single cell and 
-checks to see if any other cells rely on it. The way our design currently works is we 
+we have added in a evaluate single cell function, which in turn evaluates one single cell and
+checks to see if any other cells rely on it. The way our design currently works is we
 have a builder which makes a spread sheet with or without an infile. Then once the file is
 built we can then add to it with the newly made updateCurrentView function. We have obviously
-added in a new dynamic view which we can manipulate after the creation of the spreadsheet. 
-Every time we make changes to the spreadsheet we then update the dynamic view. 
+added in a new dynamic view which we can manipulate after the creation of the spreadsheet.
+Every time we make changes to the spreadsheet we then update the dynamic view.
 Instead of throwing errors when illicit data is placed in one of the cells we have now
 implemented certain handlers to warn or tell the user they have done so. These specific behaviors
-are explained below. 
+are explained below.
 
 We have also added listeners. The listeners we have added in the controller consist of two
 designated to call a function when one of the two buttons is clicked. When the confirm
 button is clicked the data placed into the text box is evaluated and placed into the currently
-selected cell. When the cancel button is pressed the current raw data in the cell is placed into 
+selected cell. When the cancel button is pressed the current raw data in the cell is placed into
 the text box.
 
 We have an additional listener which waits for button clicks anywhere on the grid. The click's
@@ -46,14 +46,14 @@ a cell.
 
 ### Behavior
 #####
-If something is put into a cell that is believed to be a typo or an incomplete expression such 
-as 
-> SUM(1:) 
+If something is put into a cell that is believed to be a typo or an incomplete expression such
+as
+> SUM(1:)
 #####
 Then the string-ified version of that expression will be placed into the cell, while the text box
 will be filled with the string-ified version.
 
-If something throws a bad entry such as 
+If something throws a bad entry such as
 > 10 + 3
 #####
 Then the cell will be filled with
@@ -92,19 +92,19 @@ confirmed with the confirm button, this includes deleting information.
 - [x] Graphical View Test
 - [ ] Controller
 - [ ] Controller Test
-- [ ] Additional View 
+- [ ] Additional View
 - [ ] Additional View Test
 ------------------------------------------------------------------
 
 ##### 3 inputs are possible for cells
-**Values** 
+**Values**
  - Values can be:
   ````
-  numbers 
+  numbers
   booleans
   strings
   ````
-**Formulas** 
+**Formulas**
  - Formulas can include:
   ````
   SUM
@@ -118,7 +118,7 @@ confirmed with the confirm button, this includes deleting information.
  > - C2 (Single Reference)
 
 ------------------------------------------------------------------
-##### The following is an example input file 
+##### The following is an example input file
 ````
 A1 3
 A2 7
