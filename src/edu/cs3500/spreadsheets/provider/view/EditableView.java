@@ -1,5 +1,6 @@
-package edu.cs3500.spreadsheets.providerView.;
+package edu.cs3500.spreadsheets.provider.view;
 
+import edu.cs3500.spreadsheets.view.EditableViewInterface;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Color;

@@ -1,5 +1,6 @@
-package edu.cs3500.spreadsheets.providerView.;
+package edu.cs3500.spreadsheets.provider.view;
 
+import edu.cs3500.spreadsheets.view.WorksheetView;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 

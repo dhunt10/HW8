@@ -1,6 +1,6 @@
-package edu.cs3500.spreadsheets.providerView;
+package edu.cs3500.spreadsheets.provider.view;
 
-import edu.cs3500.spreadsheets.model.Spreadsheet;
+import edu.cs3500.spreadsheets.view.WorksheetView;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.util.Map;
@@ -33,7 +33,7 @@ public class Table extends JPanel implements WorksheetView {
 
   int numCols = 26;
   int numRows = 30;
-  private Spreadsheet model;
+  private ViewModel model;
   private int height = 500;
   private int width = 500;
 
