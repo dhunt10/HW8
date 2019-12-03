@@ -24,9 +24,6 @@ public class BasicCell implements Cell {
 
   @Override
   public void setEvaluatedValue(Sexp val) {
-    Formula f = val.accept(new SexpToFormula());
-
-    c.setEvaluatedData(f.evaluate());
 
   }
 }
