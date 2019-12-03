@@ -1,6 +1,7 @@
 package edu.cs3500.spreadsheets.provider.view;
 
-import edu.cs3500.spreadsheets.view.EditableViewInterface;
+import edu.cs3500.spreadsheets.provider.controller.KeyboardListener;
+import edu.cs3500.spreadsheets.provider.model.ViewModel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Color;
@@ -19,9 +20,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import edu.cs3500.spreadsheets.controller.KeyboardListener;
 import edu.cs3500.spreadsheets.model.Coord;
-import edu.cs3500.spreadsheets.model.ViewModel;
 
 /**
  * A view for editing worksheets.  An EditableView contains the same table as VisualView.  In
@@ -219,6 +218,7 @@ public class EditableView extends JFrame implements EditableViewInterface {
   public String getInputString() {
     return input.getText();
   }
+
 
   @Override
   public void setKeyboardListener(KeyboardListener kl) {

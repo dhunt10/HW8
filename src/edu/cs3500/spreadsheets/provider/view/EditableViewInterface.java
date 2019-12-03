@@ -1,11 +1,9 @@
 package edu.cs3500.spreadsheets.provider.view;
 
-import edu.cs3500.spreadsheets.view.WorksheetView;
+import edu.cs3500.spreadsheets.provider.controller.KeyboardListener;
+import edu.cs3500.spreadsheets.model.Coord;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
-
-import edu.cs3500.spreadsheets.controller.KeyboardListener;
-import edu.cs3500.spreadsheets.model.Coord;
 
 /**
  * An interface that allows for editing.  EditableViewInterface contains the table from VisualView,
