@@ -8,6 +8,7 @@ import edu.cs3500.spreadsheets.model.Spreadsheet;
 import edu.cs3500.spreadsheets.model.WorksheetReader;
 import edu.cs3500.spreadsheets.provider.model.ViewModelImpl;
 import edu.cs3500.spreadsheets.provider.view.EditableView;
+import edu.cs3500.spreadsheets.provider.view.Table;
 import edu.cs3500.spreadsheets.provider.view.ViewAdapter;
 import edu.cs3500.spreadsheets.view.CompositeView;
 import edu.cs3500.spreadsheets.view.GraphicsView;
@@ -18,6 +19,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.JTable;
 
 /**
  * The main class for our program.
@@ -195,6 +197,7 @@ public class BeyondGood {
         return new CompositeView(s.getCurrSpreadSheet(), size, size, s);
       case("provider"):
         ViewModelImpl vMI = new ViewModelImpl(s);
+        JTable table = new Table(vMI).getTable(true);
         EditableView editableView = new EditableView(vMI);
         ViewAdapter viewAdapter = new ViewAdapter(editableView, new ControllerAdapter(editableView));
         return viewAdapter;
