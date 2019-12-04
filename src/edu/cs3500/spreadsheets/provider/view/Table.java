@@ -1,6 +1,6 @@
 package edu.cs3500.spreadsheets.provider.view;
 
-import edu.cs3500.spreadsheets.view.WorksheetView;
+import edu.cs3500.spreadsheets.provider.model.ViewModel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.util.Map;
@@ -14,9 +14,8 @@ import javax.swing.JFrame;
 import javax.swing.table.TableColumn;
 
 
-import edu.cs3500.spreadsheets.model.BasicCell;
+import edu.cs3500.spreadsheets.provider.model.BasicCell;
 import edu.cs3500.spreadsheets.model.Coord;
-import edu.cs3500.spreadsheets.model.ViewModel;
 
 /**
  * Table is an implementation of WorksheetView that renders a given worksheet model inside a window,

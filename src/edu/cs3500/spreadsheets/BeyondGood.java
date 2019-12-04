@@ -5,6 +5,9 @@ import edu.cs3500.spreadsheets.model.BasicWorksheet.Builder;
 import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.model.Spreadsheet;
 import edu.cs3500.spreadsheets.model.WorksheetReader;
+import edu.cs3500.spreadsheets.provider.model.ViewModelImpl;
+import edu.cs3500.spreadsheets.provider.view.EditableView;
+import edu.cs3500.spreadsheets.provider.view.ViewAdapter;
 import edu.cs3500.spreadsheets.view.CompositeView;
 import edu.cs3500.spreadsheets.view.GraphicsView;
 import edu.cs3500.spreadsheets.view.IView;
@@ -25,13 +28,13 @@ public class BeyondGood {
    * @param args any command-line arguments.
    */
   public static void main(String[] args) throws FileNotFoundException {
-    //File infile = new File("/Users/darinhunt/Desktop/OOD/HW7/test/testTRI.txt");
+    File infile = new File("/Users/darinhunt/Desktop/OOD/HW7/test/testTRI.txt");
     //File outfile = new File("/Users/darinhunt/Desktop/OOD/HW7/test/testTRI_results.txt");
-    File infile = null;
+    //File infile = null;
     File outfile = null;
     String incell = null;
     int size = 51;
-    String view = "composite";
+    String view = "provider";
     for (int i = 0; i < args.length; i++) {
       switch (args[i]) {
         case ("-size"):
@@ -190,7 +193,10 @@ public class BeyondGood {
       case("composite"):
         return new CompositeView(s.getCurrSpreadSheet(), size, size, s);
       case("provider"):
-        return new Table();
+        ViewModelImpl vMI = new ViewModelImpl(s);
+        EditableView editableView = new EditableView(vMI);
+        ViewAdapter viewAdapter = new ViewAdapter(editableView);
+        return viewAdapter;
       default: throw new IllegalArgumentException("This type of view is not supported");
     }
   }

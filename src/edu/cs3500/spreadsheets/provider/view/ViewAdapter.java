@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.util.Map;
 
-public class ViewAdapter implements IView{
+public class ViewAdapter implements IView {
 
   EditableView adaptee;
 
