@@ -1,5 +1,6 @@
 package edu.cs3500.spreadsheets;
 
+import edu.cs3500.spreadsheets.controller.ControllerAdapter;
 import edu.cs3500.spreadsheets.model.BasicWorksheet;
 import edu.cs3500.spreadsheets.model.BasicWorksheet.Builder;
 import edu.cs3500.spreadsheets.model.Coord;
@@ -195,7 +196,7 @@ public class BeyondGood {
       case("provider"):
         ViewModelImpl vMI = new ViewModelImpl(s);
         EditableView editableView = new EditableView(vMI);
-        ViewAdapter viewAdapter = new ViewAdapter(editableView);
+        ViewAdapter viewAdapter = new ViewAdapter(editableView, new ControllerAdapter(editableView));
         return viewAdapter;
       default: throw new IllegalArgumentException("This type of view is not supported");
     }
