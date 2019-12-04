@@ -1,5 +1,44 @@
 package edu.cs3500.spreadsheets.provider.model;
 
-public class WorksheetImpl {
+import edu.cs3500.spreadsheets.model.BasicWorksheet;
+import edu.cs3500.spreadsheets.model.Coord;
+import edu.cs3500.spreadsheets.model.Spreadsheet;
+import java.util.Map;
 
+public class WorksheetImpl implements Worksheet {
+
+  Spreadsheet spreadsheet;
+  public WorksheetImpl(Spreadsheet spreadsheet) {
+    this.spreadsheet = spreadsheet;
+  }
+
+  @Override
+  public void evaluateAll() throws IllegalArgumentException {
+    spreadsheet.getEvaluatedCells();
+  }
+
+  @Override
+  public String getCellAtRaw(int i, int i1) throws IllegalArgumentException {
+    return spreadsheet.getCurrSpreadSheet().get(new Coord(i, i1)).getRawString();
+  }
+
+  @Override
+  public String getCellAtEvaluated(int i, int i1) throws IllegalArgumentException {
+    return spreadsheet.getCurrSpreadSheet().get(new Coord(i, i1)).getEvaluatedData().toString();
+  }
+
+  @Override
+  public void changeCellContentsOrReplaceCell(Coord c, String contents) {
+    spreadsheet.getCellAt(c).setRawString(contents);
+  }
+
+  public Spreadsheet getBasicWorksheet() {
+    return spreadsheet;
+  }
+
+
+  @Override
+  public Map<Coord, BasicCell> getRawSpreadsheet() {
+    return ViewModelImpl.mapConverter(spreadsheet.getCurrSpreadSheet());
+  }
 }

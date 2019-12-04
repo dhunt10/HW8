@@ -2,7 +2,6 @@ package edu.cs3500.spreadsheets.provider.model;
 
 import edu.cs3500.spreadsheets.model.Formula;
 import edu.cs3500.spreadsheets.model.SexpToFormula;
-import edu.cs3500.spreadsheets.sexp.Parser;
 import edu.cs3500.spreadsheets.sexp.Sexp;
 
 public class BasicCell implements Cell {
@@ -24,6 +23,6 @@ public class BasicCell implements Cell {
 
   @Override
   public void setEvaluatedValue(Sexp val) {
-
+    throw new UnsupportedOperationException("Not supported method");
   }
 }

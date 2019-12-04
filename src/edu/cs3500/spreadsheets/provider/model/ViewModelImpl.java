@@ -1,7 +1,9 @@
 package edu.cs3500.spreadsheets.provider.model;
 
+import edu.cs3500.spreadsheets.controller.CompositeSpreadsheetController;
 import edu.cs3500.spreadsheets.model.Cell;
 import edu.cs3500.spreadsheets.model.Coord;
+import edu.cs3500.spreadsheets.model.Spreadsheet;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -10,8 +12,8 @@ import javax.swing.plaf.metal.MetalDesktopIconUI;
 
 public class ViewModelImpl implements ViewModel {
 
-  edu.cs3500.spreadsheets.model.BasicWorksheet basicWorksheet;
-  public ViewModelImpl(edu.cs3500.spreadsheets.model.BasicWorksheet basicWorksheet) {
+  Spreadsheet basicWorksheet;
+  public ViewModelImpl(Spreadsheet basicWorksheet) {
     this.basicWorksheet = basicWorksheet;
   }
 
