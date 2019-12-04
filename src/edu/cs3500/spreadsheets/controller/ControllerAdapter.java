@@ -1,27 +1,31 @@
 package edu.cs3500.spreadsheets.controller;
 
+import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.model.Spreadsheet;
+import edu.cs3500.spreadsheets.provider.model.ViewModel;
+import edu.cs3500.spreadsheets.provider.view.EditableViewInterface;
 import edu.cs3500.spreadsheets.view.CompositeViewButtonActions;
 import edu.cs3500.spreadsheets.view.CompositeViewMouseActions;
+import edu.cs3500.spreadsheets.view.IView;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
-public class ControllerAdapter implements SpreadsheetController,
+public class ControllerAdapter implements
     CompositeViewMouseActions, CompositeViewButtonActions {
 
-  @Override
-  public void updateProgram(String coordinate, String inString, Spreadsheet s) {
+  private ViewModel model;
+  private EditableViewInterface evi;
+  //private IView adapter;
 
-  }
-
-  @Override
-  public void setX(int x) {
-
-  }
-
-  @Override
-  public void setY(int y) {
-
+  public ControllerAdapter(EditableViewInterface evi){
+    this.evi = evi;
+    evi.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        cancelActionPerformed(e);
+      }
+    });
   }
 
   @Override
@@ -53,4 +57,13 @@ public class ControllerAdapter implements SpreadsheetController,
   public void mouseExited(MouseEvent e) {
 
   }
+
+  /**
+   * Perform action when cancel button is clicked.
+   * @param e button click for cancel button.
+   */
+  public void cancelActionPerformed(ActionEvent e) {
+    evi.clearInputString();
+  }
+
 }

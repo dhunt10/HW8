@@ -4,6 +4,7 @@ import edu.cs3500.spreadsheets.model.Formula;
 import edu.cs3500.spreadsheets.model.SexpToFormula;
 import edu.cs3500.spreadsheets.sexp.Sexp;
 
+//adapter
 public class BasicCell implements Cell {
   edu.cs3500.spreadsheets.model.Cell c;
 

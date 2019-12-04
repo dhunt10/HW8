@@ -1,5 +1,6 @@
 package edu.cs3500.spreadsheets.provider.view;
 
+import edu.cs3500.spreadsheets.controller.ControllerAdapter;
 import edu.cs3500.spreadsheets.model.Cell;
 import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.view.GridPanel;
@@ -11,9 +12,11 @@ import java.util.Map;
 public class ViewAdapter implements IView {
 
   EditableView adaptee;
+  ControllerAdapter fuck;
 
-  public ViewAdapter(EditableView adaptee){
+  public ViewAdapter(EditableView adaptee, ControllerAdapter fuck){
     this.adaptee = adaptee;
+    this.fuck = fuck;
   }
 
   @Override
