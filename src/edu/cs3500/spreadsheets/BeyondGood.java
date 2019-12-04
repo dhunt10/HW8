@@ -28,7 +28,7 @@ public class BeyondGood {
    * @param args any command-line arguments.
    */
   public static void main(String[] args) throws FileNotFoundException {
-    File infile = new File("/Users/darinhunt/Desktop/OOD/HW7/test/testTRI.txt");
+    File infile = null;
     //File outfile = new File("/Users/darinhunt/Desktop/OOD/HW7/test/testTRI_results.txt");
     //File infile = null;
     File outfile = null;
