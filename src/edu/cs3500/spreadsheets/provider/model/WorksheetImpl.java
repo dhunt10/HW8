@@ -1,6 +1,5 @@
 package edu.cs3500.spreadsheets.provider.model;
 
-import edu.cs3500.spreadsheets.model.BasicWorksheet;
 import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.model.Spreadsheet;
 import java.util.Map;
