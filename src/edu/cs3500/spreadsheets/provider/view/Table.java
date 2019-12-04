@@ -1,5 +1,7 @@
 package edu.cs3500.spreadsheets.provider.view;
 
+import edu.cs3500.spreadsheets.provider.model.BasicCell;
+import edu.cs3500.spreadsheets.provider.model.ViewModel;
 import edu.cs3500.spreadsheets.view.WorksheetView;
 import java.awt.Color;
 import java.awt.Dimension;
