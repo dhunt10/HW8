@@ -10,6 +10,7 @@ import edu.cs3500.spreadsheets.provider.model.ViewModelImpl;
 import edu.cs3500.spreadsheets.provider.model.Worksheet;
 import edu.cs3500.spreadsheets.provider.model.WorksheetImpl;
 import edu.cs3500.spreadsheets.provider.view.EditableView;
+import edu.cs3500.spreadsheets.provider.view.Table;
 import edu.cs3500.spreadsheets.provider.view.ViewAdapter;
 import edu.cs3500.spreadsheets.view.CompositeView;
 import edu.cs3500.spreadsheets.view.GraphicsView;
@@ -20,6 +21,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import javax.swing.JTable;
 
 /**
  * The main class for our program.

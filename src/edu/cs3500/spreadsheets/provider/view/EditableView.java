@@ -1,9 +1,10 @@
 package edu.cs3500.spreadsheets.provider.view;
 
 import edu.cs3500.spreadsheets.provider.model.ViewModel;
-//import edu.cs3500.spreadsheets.view.EditableViewInterface;
 import edu.cs3500.spreadsheets.provider.controller.KeyboardListener;
-import edu.cs3500.spreadsheets.provider.model.ViewModel;
+import edu.cs3500.spreadsheets.provider.model.ViewModelImpl;
+import edu.cs3500.spreadsheets.provider.model.Worksheet;
+import edu.cs3500.spreadsheets.provider.model.WorksheetImpl;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Color;
@@ -23,6 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import edu.cs3500.spreadsheets.model.Coord;
+import javax.swing.text.View;
 
 /**
  * A view for editing worksheets.  An EditableView contains the same table as VisualView.  In

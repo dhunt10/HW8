@@ -7,8 +7,6 @@ import edu.cs3500.spreadsheets.model.Spreadsheet;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import javax.lang.model.element.Element;
-import javax.swing.plaf.metal.MetalDesktopIconUI;
 
 public class ViewModelImpl implements ViewModel {
 
@@ -31,6 +29,18 @@ public class ViewModelImpl implements ViewModel {
     while (mapIterator.hasNext()) {
       Map.Entry mapElement = (Map.Entry)mapIterator.next();
       BasicCell bc = new BasicCell((Cell) mapElement.getValue());
+      adaptee.put((Coord) mapElement.getKey(), bc);
+    }
+
+    return adaptee;
+  }
+
+  public static Map<Coord, edu.cs3500.spreadsheets.model.Cell> reverseMapConverter(Map<Coord, BasicCell> map) {
+    Map<Coord, edu.cs3500.spreadsheets.model.Cell> adaptee = new HashMap<>();
+    Iterator mapIterator = map.entrySet().iterator();
+    while (mapIterator.hasNext()) {
+      Map.Entry mapElement = (Map.Entry)mapIterator.next();
+      Cell bc = new edu.cs3500.spreadsheets.model.Cell((Coord) mapElement.getValue());
       adaptee.put((Coord) mapElement.getKey(), bc);
     }
 
