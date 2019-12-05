@@ -1,16 +1,15 @@
 package edu.cs3500.spreadsheets;
 
-import edu.cs3500.spreadsheets.controller.ControllerAdapter;
 import edu.cs3500.spreadsheets.model.BasicWorksheet;
 import edu.cs3500.spreadsheets.model.BasicWorksheet.Builder;
 import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.model.Spreadsheet;
 import edu.cs3500.spreadsheets.model.WorksheetReader;
+import edu.cs3500.spreadsheets.provider.controller.ControllerAdapter;
 import edu.cs3500.spreadsheets.provider.model.ViewModelImpl;
 import edu.cs3500.spreadsheets.provider.model.Worksheet;
 import edu.cs3500.spreadsheets.provider.model.WorksheetImpl;
 import edu.cs3500.spreadsheets.provider.view.EditableView;
-import edu.cs3500.spreadsheets.provider.view.Table;
 import edu.cs3500.spreadsheets.provider.view.ViewAdapter;
 import edu.cs3500.spreadsheets.view.CompositeView;
 import edu.cs3500.spreadsheets.view.GraphicsView;
@@ -21,7 +20,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import javax.swing.JTable;
 
 /**
  * The main class for our program.
@@ -203,7 +201,8 @@ public class BeyondGood {
         Worksheet w = new WorksheetImpl(s);
         ViewModelImpl vmi = new ViewModelImpl(w);
         EditableView editableView = new EditableView(vmi);
-        ViewAdapter viewAdapter = new ViewAdapter(editableView, new ControllerAdapter(w, editableView));
+        ViewAdapter viewAdapter = new ViewAdapter(
+            editableView, new ControllerAdapter(w, editableView));
         return viewAdapter;
       default: throw new IllegalArgumentException("This type of view is not supported");
     }

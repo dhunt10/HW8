@@ -1,16 +1,22 @@
 package edu.cs3500.spreadsheets.provider.model;
 
-import edu.cs3500.spreadsheets.controller.CompositeSpreadsheetController;
 import edu.cs3500.spreadsheets.model.Cell;
 import edu.cs3500.spreadsheets.model.Coord;
-import edu.cs3500.spreadsheets.model.Spreadsheet;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * Read only version of the spreadsheet.
+ */
 public class ViewModelImpl implements ViewModel {
 
   Worksheet basicWorksheet;
+
+  /**
+   * Constructor of which is a read only spreadsheet.
+   * @param basicWorksheet our version of spreadsheet.
+   */
   public ViewModelImpl(Worksheet basicWorksheet) {
     this.basicWorksheet = basicWorksheet;
   }
@@ -23,7 +29,13 @@ public class ViewModelImpl implements ViewModel {
     //return adaptee;
   }
 
-  public static Map<Coord, BasicCell> mapConverter(Map<Coord, edu.cs3500.spreadsheets.model.Cell> map) {
+  /**
+   * Converts our map to their map of cells.
+   * @param map map of coords: cells.
+   * @return the provider's map of coords: basicCells.
+   */
+  public static Map<Coord, BasicCell> mapConverter(
+      Map<Coord, edu.cs3500.spreadsheets.model.Cell> map) {
     Map<Coord, BasicCell> adaptee = new HashMap<>();
     Iterator mapIterator = map.entrySet().iterator();
     while (mapIterator.hasNext()) {
@@ -31,11 +43,16 @@ public class ViewModelImpl implements ViewModel {
       BasicCell bc = new BasicCell((Cell) mapElement.getValue());
       adaptee.put((Coord) mapElement.getKey(), bc);
     }
-
     return adaptee;
   }
 
-  public static Map<Coord, edu.cs3500.spreadsheets.model.Cell> reverseMapConverter(Map<Coord, BasicCell> map) {
+  /**
+   * Converts provider's map to map of our cells.
+   * @param map map of coords: basicCells.
+   * @return our map of coords: Cells.
+   */
+  public static Map<Coord, edu.cs3500.spreadsheets.model.Cell> reverseMapConverter(
+      Map<Coord, BasicCell> map) {
     Map<Coord, edu.cs3500.spreadsheets.model.Cell> adaptee = new HashMap<>();
     Iterator mapIterator = map.entrySet().iterator();
     while (mapIterator.hasNext()) {

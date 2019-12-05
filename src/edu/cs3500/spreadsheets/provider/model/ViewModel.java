@@ -26,7 +26,7 @@ public interface ViewModel {
    * This string represents the exact contents that a user used when creating this cell.
    *
    * @param i  the col 1-indexed of the desired cell
-   * @param i1 teh row 1-indexed of the desired cell
+   * @param i1 teh row s-indexed of the desired cell
    * @return the raw contents of a cell at the desired position
    * @throws IllegalArgumentException if the cell called does not exist in this spreadsheet.
    */

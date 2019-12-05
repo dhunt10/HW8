@@ -4,7 +4,6 @@ import edu.cs3500.spreadsheets.BeyondGood;
 import edu.cs3500.spreadsheets.model.Cell;
 import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.model.Spreadsheet;
-import edu.cs3500.spreadsheets.provider.model.WorksheetImpl;
 import edu.cs3500.spreadsheets.view.CompositeViewButtonActions;
 import edu.cs3500.spreadsheets.view.CompositeViewMouseActions;
 import edu.cs3500.spreadsheets.view.GridPanel;

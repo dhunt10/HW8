@@ -5,9 +5,17 @@ import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.model.Spreadsheet;
 import java.util.Map;
 
+/**
+ * R/W version of our spreadsheet.
+ */
 public class WorksheetImpl implements Worksheet {
 
   Spreadsheet spreadsheet;
+
+  /**
+   * Constructor for R/W spreadsheet.
+   * @param spreadsheet our version of spreadsheet.
+   */
   public WorksheetImpl(Spreadsheet spreadsheet) {
     this.spreadsheet = spreadsheet;
   }
