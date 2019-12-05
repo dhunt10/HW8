@@ -40,7 +40,7 @@ public class ControllerAdapter implements
 
   @Override
   public void mouseClicked(MouseEvent e) {
-    System.out.println(evi.getSelectedCell());
+    System.out.println(model.getCellAtEvaluated(evi.getSelectedCell().row, evi.getSelectedCell().col));
     evi.setInput(model.getCellAtRaw(evi.getSelectedCell().row, evi.getSelectedCell().col));
   }
 
