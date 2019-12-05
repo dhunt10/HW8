@@ -8,21 +8,21 @@ import java.awt.event.KeyListener;
  */
 public class KeyboardListener implements KeyListener {
   public KeyboardListener() {
-
+    // not needed
   }
 
   @Override
   public void keyTyped(KeyEvent e) {
-
+    // not needed
   }
 
   @Override
   public void keyPressed(KeyEvent e) {
-
+    // not needed
   }
 
   @Override
   public void keyReleased(KeyEvent e) {
-
+    // not needed
   }
 }

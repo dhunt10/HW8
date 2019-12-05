@@ -18,7 +18,7 @@ public class ViewAdapter implements IView {
   /**
    * Constructor.
    * @param adaptee their view.
-   * @param adapter controller. 
+   * @param adapter controller.
    */
   public ViewAdapter(EditableView adaptee, ControllerAdapter adapter) {
     this.adaptee = adaptee;

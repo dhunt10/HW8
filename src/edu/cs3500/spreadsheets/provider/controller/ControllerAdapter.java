@@ -24,7 +24,7 @@ public class ControllerAdapter implements
    * @param model model to create spreadsheet.
    * @param evi an instance of the editable view implementation.
    */
-  public ControllerAdapter(Worksheet model, EditableViewInterface evi){
+  public ControllerAdapter(Worksheet model, EditableViewInterface evi) {
     this.evi = evi;
     this.model = model;
     evi.addActionListener(new ActionListener() {
@@ -45,7 +45,7 @@ public class ControllerAdapter implements
 
   @Override
   public void actionPerformed(ActionEvent e) {
-
+    // not needed
   }
 
   @Override
