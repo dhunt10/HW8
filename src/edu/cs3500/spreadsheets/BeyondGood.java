@@ -7,6 +7,8 @@ import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.model.Spreadsheet;
 import edu.cs3500.spreadsheets.model.WorksheetReader;
 import edu.cs3500.spreadsheets.provider.model.ViewModelImpl;
+import edu.cs3500.spreadsheets.provider.model.Worksheet;
+import edu.cs3500.spreadsheets.provider.model.WorksheetImpl;
 import edu.cs3500.spreadsheets.provider.view.EditableView;
 import edu.cs3500.spreadsheets.provider.view.Table;
 import edu.cs3500.spreadsheets.provider.view.ViewAdapter;
@@ -196,10 +198,10 @@ public class BeyondGood {
       case("composite"):
         return new CompositeView(s.getCurrSpreadSheet(), size, size, s);
       case("provider"):
-        ViewModelImpl vMI = new ViewModelImpl(s);
-        JTable table = new Table(vMI).getTable(true);
-        EditableView editableView = new EditableView(vMI);
-        ViewAdapter viewAdapter = new ViewAdapter(editableView, new ControllerAdapter(editableView));
+        Worksheet w = new WorksheetImpl(s);
+        ViewModelImpl vmi = new ViewModelImpl(w);
+        EditableView editableView = new EditableView(vmi);
+        ViewAdapter viewAdapter = new ViewAdapter(editableView, new ControllerAdapter(w, editableView));
         return viewAdapter;
       default: throw new IllegalArgumentException("This type of view is not supported");
     }

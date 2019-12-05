@@ -10,16 +10,17 @@ import java.util.Map;
 
 public class ViewModelImpl implements ViewModel {
 
-  Spreadsheet basicWorksheet;
-  public ViewModelImpl(Spreadsheet basicWorksheet) {
+  Worksheet basicWorksheet;
+  public ViewModelImpl(Worksheet basicWorksheet) {
     this.basicWorksheet = basicWorksheet;
   }
 
   @Override
   public Map<Coord, BasicCell> getRawSpreadsheet() {
-    Map<Coord, BasicCell> adaptee = new HashMap<>();
-    adaptee = mapConverter(basicWorksheet.getCurrSpreadSheet());
-    return adaptee;
+    return basicWorksheet.getRawSpreadsheet();
+    //Map<Coord, BasicCell> adaptee = new HashMap<>();
+    //adaptee = mapConverter(basicWorksheet.getCurrSpreadSheet());
+    //return adaptee;
   }
 
   public static Map<Coord, BasicCell> mapConverter(Map<Coord, edu.cs3500.spreadsheets.model.Cell> map) {
@@ -48,13 +49,15 @@ public class ViewModelImpl implements ViewModel {
 
   @Override
   public String getCellAtRaw(int i, int i1) throws IllegalArgumentException {
-    Coord coord = new Coord(i, i1);
-    return basicWorksheet.getCellAt(coord).getRawString();
+    //Coord coord = new Coord(i, i1);
+    //return basicWorksheet.getCellAt(coord).getRawString();
+    return basicWorksheet.getCellAtRaw(i, i1);
   }
 
   @Override
   public String getCellAtEvaluated(int i, int i1) throws IllegalArgumentException {
-    Coord coord = new Coord(i, i1);
-    return basicWorksheet.getCellAt(coord).getEvaluatedData().toString();
+    //Coord coord = new Coord(i, i1);
+    //return basicWorksheet.getCellAt(coord).getEvaluatedData().toString();
+    return basicWorksheet.getCellAtEvaluated(i, i1);
   }
 }
