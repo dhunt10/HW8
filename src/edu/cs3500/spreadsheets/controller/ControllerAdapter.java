@@ -1,13 +1,10 @@
 package edu.cs3500.spreadsheets.controller;
 
 import edu.cs3500.spreadsheets.model.Coord;
-import edu.cs3500.spreadsheets.model.Spreadsheet;
-import edu.cs3500.spreadsheets.provider.model.ViewModel;
 import edu.cs3500.spreadsheets.provider.model.Worksheet;
 import edu.cs3500.spreadsheets.provider.view.EditableViewInterface;
 import edu.cs3500.spreadsheets.view.CompositeViewButtonActions;
 import edu.cs3500.spreadsheets.view.CompositeViewMouseActions;
-import edu.cs3500.spreadsheets.view.IView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -25,11 +22,16 @@ public class ControllerAdapter implements
     evi.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        //cancelActionPerformed(e);
         confirmActionPerformed(e);
       }
     });
 
+    /*evi.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        cancelActionPerformed(e);
+      }
+    });*/
     evi.setMouseListener(this);
   }
 
@@ -40,8 +42,9 @@ public class ControllerAdapter implements
 
   @Override
   public void mouseClicked(MouseEvent e) {
-    System.out.println(evi.getSelectedCell());
-    evi.setInput(model.getCellAtRaw(evi.getSelectedCell().row, evi.getSelectedCell().col));
+
+    evi.setSelectedCell(new Coord(e.getX()/75 + 1, e.getY()/20 + 1));
+    evi.setInput(model.getCellAtRaw(evi.getSelectedCell().col, evi.getSelectedCell().row));
   }
 
   @Override
@@ -69,13 +72,16 @@ public class ControllerAdapter implements
    * @param e button click for cancel button.
    */
   public void cancelActionPerformed(ActionEvent e) {
-    evi.clearInputString();
+    evi.setInput(model.getCellAtRaw(evi.getSelectedCell().col, evi.getSelectedCell().row));
   }
 
+  /**
+   *
+   * @param e
+   */
   public void confirmActionPerformed(ActionEvent e) {
     model.changeCellContentsOrReplaceCell(evi.getSelectedCell(), evi.getInputString());
     evi.changeCell();
-    System.out.println(evi.getInputString());
   }
 
 
