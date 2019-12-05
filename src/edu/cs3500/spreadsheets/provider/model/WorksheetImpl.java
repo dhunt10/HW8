@@ -1,5 +1,6 @@
 package edu.cs3500.spreadsheets.provider.model;
 
+import edu.cs3500.spreadsheets.BeyondGood;
 import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.model.Spreadsheet;
 import java.util.Map;
@@ -28,7 +29,7 @@ public class WorksheetImpl implements Worksheet {
 
   @Override
   public void changeCellContentsOrReplaceCell(Coord c, String contents) {
-    spreadsheet.getCellAt(c).setRawString(contents);
+    BeyondGood.updateCurrentView(c.toString(), contents, spreadsheet);
   }
 
   public Spreadsheet getBasicWorksheet() {
