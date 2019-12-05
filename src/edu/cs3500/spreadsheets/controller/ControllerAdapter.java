@@ -42,7 +42,6 @@ public class ControllerAdapter implements
 
   @Override
   public void mouseClicked(MouseEvent e) {
-
     evi.setSelectedCell(new Coord(e.getX()/75 + 1, e.getY()/20 + 1));
     evi.setInput(model.getCellAtRaw(evi.getSelectedCell().col, evi.getSelectedCell().row));
   }
