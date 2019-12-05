@@ -37,10 +37,11 @@ public class BeyondGood {
     //File infile = null;
     //File outfile = new File("/Users/darinhunt/Desktop/OOD/HW7/test/testTRI_results.txt");
     //File infile = null;
+
     File outfile = null;
     String incell = null;
     int size = 51;
-    String view = "provider";
+    String view = null;
     for (int i = 0; i < args.length; i++) {
       switch (args[i]) {
         case ("-size"):

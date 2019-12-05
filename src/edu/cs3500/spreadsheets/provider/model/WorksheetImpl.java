@@ -29,6 +29,8 @@ public class WorksheetImpl implements Worksheet {
 
   @Override
   public void changeCellContentsOrReplaceCell(Coord c, String contents) {
+    spreadsheet.getCellAt(c).setRawString(contents);
+    spreadsheet.getCellAt(c).setContents(contents);
     BeyondGood.updateCurrentView(c.toString(), contents, spreadsheet);
   }
 

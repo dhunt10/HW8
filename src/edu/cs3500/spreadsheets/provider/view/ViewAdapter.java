@@ -5,8 +5,6 @@ import edu.cs3500.spreadsheets.model.Cell;
 import edu.cs3500.spreadsheets.model.Coord;
 import edu.cs3500.spreadsheets.view.GridPanel;
 import edu.cs3500.spreadsheets.view.IView;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
 import java.util.Map;
 
 public class ViewAdapter implements IView {
